@@ -1,4 +1,6 @@
-  CALL FUNCTION 'RSPC_CHAIN_START'
+** This is FM to call process chain.
+
+CALL FUNCTION 'RSPC_CHAIN_START'
     EXPORTING
       i_chain       = i_chain
       i_t_variables = i_t_variables
