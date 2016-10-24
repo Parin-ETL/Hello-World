@@ -1,0 +1,14 @@
+  CALL FUNCTION 'RSPC_CHAIN_START'
+    EXPORTING
+      i_chain       = i_chain
+      i_t_variables = i_t_variables
+      i_synchronous = i_synchronous
+    IMPORTING
+      e_logid       = e_logid
+    EXCEPTIONS
+      error_message = 1.
+  IF sy-subrc <> 0.
+    MESSAGE ID sy-msgid TYPE sy-msgty NUMBER sy-msgno
+            WITH sy-msgv1 sy-msgv2 sy-msgv3 sy-msgv4
+            RAISING failed.
+  ENDIF.
